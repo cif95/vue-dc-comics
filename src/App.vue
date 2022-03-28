@@ -2,7 +2,9 @@
   <div id="app">
     <Header />
     <main>
-      <h3>Content goes here</h3>
+      <div class="container">
+        <h3>Content goes here</h3>
+      </div>
     </main>
     <Footer />
   </div>
@@ -22,16 +24,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Asap Condensed", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-size: 140%;
 }
 body {
-  font-family: "Raleway", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -39,6 +39,12 @@ body {
     color: white;
     padding: 3rem;
     background-color: black;
+    div.container {
+      width: 70%;
+      color: white;
+      padding: 1rem 0;
+      margin: 0 auto;
+    }
   }
 }
 </style>

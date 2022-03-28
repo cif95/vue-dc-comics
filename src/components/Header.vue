@@ -6,8 +6,12 @@
       </div>
       <nav>
         <ul>
-          <li v-for="(link, index) in headerNavLinks" :key="index">
-            <a href="#">{{ link.text }}</a>
+          <li
+            :class="{ active: link.active }"
+            v-for="(link, index) in headerNavLinks"
+            :key="index"
+          >
+            <a :href="link.url">{{ link.text }}</a>
           </li>
         </ul>
       </nav>
@@ -80,30 +84,35 @@ export default {
 <style scoped lang="scss">
 div.container {
   width: 70%;
-  padding: 1rem 0;
   display: flex;
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
   img {
-    width: 75%;
+    padding-top: 0.5rem;
+    width: 80px;
   }
-  li {
-    list-style-type: none;
-    display: inline-block;
-    margin-right: 1.2rem;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 5px solid transparent;
-    &.active,
-    &:active {
-      color: #107eec;
-      border-color: #107eec;
-    }
-    a {
-      color: rgb(24, 24, 24);
-      text-decoration: none;
+  ul {
+    margin: 0;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 1.2rem;
+      padding: 3rem 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-bottom: 5px solid transparent;
+      &.active {
+        border-color: #107eec;
+        a {
+          color: #107eec;
+        }
+      }
+      a {
+        color: rgb(51, 51, 51);
+        text-decoration: none;
+      }
     }
   }
 }
