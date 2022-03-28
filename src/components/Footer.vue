@@ -199,7 +199,6 @@ export default {
 div.container {
   width: 70%;
   color: white;
-  padding: 1rem 0;
   margin: 0 auto;
 }
 div.home-footer {
@@ -208,6 +207,7 @@ div.home-footer {
     nav {
       display: flex;
       gap: 2rem;
+      background: url("../assets/img/dc-logo-bg.png") no-repeat right;
       div.footer-list {
         h4 {
           margin-bottom: 0.5rem;
@@ -219,7 +219,7 @@ div.home-footer {
           li {
             list-style-type: none;
             a {
-              font-size: 0.75rem;
+              font-size: 0.85rem;
               color: rgb(156, 156, 156);
               text-decoration: none;
             }
@@ -229,10 +229,11 @@ div.home-footer {
     }
   }
   div.footer-social {
-    padding: 2rem;
-    background-color: #232323;
+    padding: 1rem 0;
+    background-color: #303030;
     div.container {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       button {
         background-color: transparent;
@@ -246,7 +247,7 @@ div.home-footer {
       }
       div.socials {
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
         align-items: center;
         h4 {
           color: #107eec;

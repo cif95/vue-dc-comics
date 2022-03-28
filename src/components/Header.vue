@@ -97,7 +97,7 @@ div.container {
     li {
       list-style-type: none;
       display: inline-block;
-      margin-right: 1.2rem;
+      margin-right: 2rem;
       padding: 3rem 0;
       font-size: 0.85rem;
       font-weight: 600;
