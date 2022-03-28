@@ -80,7 +80,7 @@ export default {
 <style scoped lang="scss">
 div.container {
   width: 70%;
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   margin: 0 auto;
   align-items: center;
@@ -95,6 +95,12 @@ div.container {
     font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
+    border-bottom: 5px solid transparent;
+    &.active,
+    &:active {
+      color: #107eec;
+      border-color: #107eec;
+    }
     a {
       color: rgb(24, 24, 24);
       text-decoration: none;

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header />
-    <main></main>
+    <main>
+      <h3>Content goes here</h3>
+    </main>
     <Footer />
   </div>
 </template>
@@ -30,5 +32,13 @@ export default {
 }
 body {
   font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  main {
+    color: white;
+    padding: 3rem;
+    background-color: black;
+  }
 }
 </style>
