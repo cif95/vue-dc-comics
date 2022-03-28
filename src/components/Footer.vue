@@ -3,7 +3,7 @@
     <div class="footer-nav">
       <div class="container">
         <nav>
-          <div class="footer-list">
+          <div class="footer-list-col">
             <h4>Dc Comics</h4>
             <ul>
               <li v-for="(link, index) in footerDcComicsNavLinks" :key="index">
@@ -17,7 +17,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer-list">
+          <div class="footer-list-col">
             <h4>Dc</h4>
             <ul>
               <li v-for="(link, index) in footerDcNavLinks" :key="index">
@@ -25,7 +25,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer-list">
+          <div class="footer-list-col">
             <h4>Sites</h4>
             <ul>
               <li v-for="(link, index) in footerSitesNavLinks" :key="index">
@@ -37,9 +37,9 @@
       </div>
     </div>
     <div class="footer-social">
-      <div class="container">
+      <div class="container allCentered">
         <button>Sign up now!</button>
-        <div class="socials">
+        <div class="socials allCentered">
           <h4>Follow us</h4>
           <img src="../assets/img/footer-facebook.png" alt="facebook logo" />
           <img src="../assets/img/footer-twitter.png" alt="twitter logo" />
@@ -196,11 +196,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-div.container {
-  width: 70%;
-  color: white;
-  margin: 0 auto;
-}
+@import "../assets/scss/partials/_variables.scss";
 div.home-footer {
   div.footer-nav {
     background-image: url(../assets/img/footer-bg.jpg);
@@ -208,22 +204,15 @@ div.home-footer {
       display: flex;
       gap: 2rem;
       background: url("../assets/img/dc-logo-bg.png") no-repeat right;
-      div.footer-list {
+      div.footer-list-col {
+        padding-bottom: 3.5rem;
         h4 {
           margin-bottom: 0.5rem;
           text-transform: uppercase;
         }
-        ul {
-          margin-top: 0;
-          padding-left: 0;
-          li {
-            list-style-type: none;
-            a {
-              font-size: 0.85rem;
-              color: rgb(156, 156, 156);
-              text-decoration: none;
-            }
-          }
+        a {
+          font-size: 0.85rem;
+          color: rgb(156, 156, 156);
         }
       }
     }
@@ -231,31 +220,23 @@ div.home-footer {
   div.footer-social {
     padding: 1rem 0;
     background-color: #303030;
-    div.container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      button {
-        background-color: transparent;
-        color: white;
-        font-weight: 600;
-        font-size: 1rem;
+    button {
+      background-color: transparent;
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+      height: 50px;
+      padding: 0 1rem;
+      border: 2px solid $brandColor;
+    }
+    div.socials {
+      gap: 1.5rem;
+      h4 {
+        color: $brandColor;
         text-transform: uppercase;
-        height: 50px;
-        padding: 0 1rem;
-        border: 2px solid #107eec;
       }
-      div.socials {
-        display: flex;
-        gap: 1.5rem;
-        align-items: center;
-        h4 {
-          color: #107eec;
-          text-transform: uppercase;
-        }
-        img {
-          width: 35px;
-        }
+      img {
+        width: 35px;
       }
     }
   }

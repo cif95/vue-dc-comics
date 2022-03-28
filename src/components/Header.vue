@@ -1,6 +1,6 @@
 <template>
   <div class="home-header">
-    <div class="container">
+    <div class="container allCentered">
       <div class="header-logo">
         <img src="../assets/img/dc-logo.png" alt="dc comics logo" />
       </div>
@@ -10,6 +10,7 @@
             :class="{ active: link.active }"
             v-for="(link, index) in headerNavLinks"
             :key="index"
+            @click="updateCurrentActive(index)"
           >
             <a :href="link.url">{{ link.text }}</a>
           </li>
@@ -78,41 +79,44 @@ export default {
       ],
     };
   },
+  methods: {
+    updateCurrentActive(currentIndex) {
+      this.headerNavLinks.forEach((link, index) => {
+        if (currentIndex === index) {
+          link.active = true;
+        } else {
+          link.active = false;
+        }
+      });
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/partials/_variables.scss";
 div.container {
-  width: 70%;
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
   justify-content: space-between;
   img {
     padding-top: 0.5rem;
     width: 80px;
   }
-  ul {
-    margin: 0;
-    li {
-      list-style-type: none;
-      display: inline-block;
-      margin-right: 2rem;
-      padding: 3rem 0;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      border-bottom: 5px solid transparent;
-      &.active {
-        border-color: #107eec;
-        a {
-          color: #107eec;
-        }
-      }
+  li {
+    padding: 3rem 0;
+    font-weight: 600;
+    margin-right: 2rem;
+    font-size: 0.85rem;
+    display: inline-block;
+    text-transform: uppercase;
+    border-bottom: 5px solid transparent;
+    &.active {
+      border-color: $brandColor;
       a {
-        color: rgb(51, 51, 51);
-        text-decoration: none;
+        color: $brandColor;
       }
+    }
+    a {
+      color: rgb(70, 70, 70);
     }
   }
 }
