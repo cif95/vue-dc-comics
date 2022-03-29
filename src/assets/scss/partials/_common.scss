@@ -10,3 +10,13 @@ li {
 a{
 	text-decoration: none;
 }
+
+.my-btn-primary {
+	border: none;
+	cursor: pointer;
+	color: white;
+	font-weight: 600;
+	padding: 0.5rem 1rem;
+	text-transform: uppercase;
+	background-color: #107eec;
+}

@@ -6,6 +6,7 @@
         :key="index"
         :cardObject="card"
       />
+      <button class="my-btn-primary">Load More</button>
     </div>
   </section>
 </template>
@@ -113,11 +114,15 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/scss/partials/_variables.scss";
 .main-content {
-  padding: 1rem;
+  padding: 1.5rem 0;
   background-color: $secondaryColor;
   .container {
     @include flex(center, center, row);
+    padding-top: 1rem;
     flex-wrap: wrap;
+    button {
+      padding: 0.5rem 3rem;
+    }
   }
 }
 </style>
