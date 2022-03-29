@@ -1,10 +1,10 @@
 <template>
   <div class="home-header">
-    <div class="container allCentered">
+    <div class="container">
       <div class="header-logo">
         <img src="../assets/img/dc-logo.png" alt="dc comics logo" />
       </div>
-      <nav>
+      <nav class="header-nav">
         <ul>
           <li
             :class="{ active: link.active }"
@@ -23,7 +23,7 @@
 <script>
 export default {
   name: "HomeHeader",
-  data: function () {
+  data() {
     return {
       headerNavLinks: [
         {
@@ -96,7 +96,7 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/partials/_variables.scss";
 div.container {
-  justify-content: space-between;
+  @include flex(center, space-between, row);
   img {
     padding-top: 0.5rem;
     width: 80px;

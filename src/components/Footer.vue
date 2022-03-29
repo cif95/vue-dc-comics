@@ -37,9 +37,9 @@
       </div>
     </div>
     <div class="footer-social">
-      <div class="container allCentered">
+      <div class="container">
         <button>Sign up now!</button>
-        <div class="socials allCentered">
+        <div class="socials">
           <h4>Follow us</h4>
           <img src="../assets/img/footer-facebook.png" alt="facebook logo" />
           <img src="../assets/img/footer-twitter.png" alt="twitter logo" />
@@ -55,7 +55,7 @@
 <script>
 export default {
   name: "HomeFooter",
-  data: function () {
+  data() {
     return {
       footerDcComicsNavLinks: [
         {
@@ -220,23 +220,27 @@ div.home-footer {
   div.footer-social {
     padding: 1rem 0;
     background-color: #303030;
-    button {
-      background-color: transparent;
-      color: white;
-      font-size: 1rem;
-      text-transform: uppercase;
-      height: 50px;
-      padding: 0 1rem;
-      border: 2px solid $brandColor;
-    }
-    div.socials {
-      gap: 1.5rem;
-      h4 {
-        color: $brandColor;
+    div.container {
+      @include flex(center, space-between, row);
+      button {
+        background-color: transparent;
+        color: white;
+        font-size: 1rem;
         text-transform: uppercase;
+        height: 50px;
+        padding: 0 1rem;
+        border: 2px solid $brandColor;
       }
-      img {
-        width: 35px;
+      div.socials {
+        @include flex(center, space-between, row);
+        gap: 1.5rem;
+        h4 {
+          color: $brandColor;
+          text-transform: uppercase;
+        }
+        img {
+          width: 35px;
+        }
       }
     }
   }
