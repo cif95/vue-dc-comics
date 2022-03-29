@@ -21,7 +21,7 @@ section#main-jumbo {
     top: 95%;
     left: 15%;
     position: absolute;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 }
 </style>

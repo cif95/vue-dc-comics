@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <img :src="cardObject.thumb" :alt="cardObject.series" />
-    <h5>{{ cardObject.series }}</h5>
+    <h6>{{ cardObject.series }}</h6>
   </div>
 </template>
 
@@ -15,16 +15,17 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/scss/partials/_variables.scss";
 div.card {
-  border: 1.5rem solid $secondaryColor;
-  width: calc(100% / 6 - 3rem);
+  height: 200px;
+  margin-bottom: 3rem;
+  width: calc(100% / 6 - 2rem);
   img {
-    height: 200px;
-    width: 200px;
+    height: 90%;
+    width: 100%;
     object-fit: cover;
     object-position: 20% 10%;
   }
-  h5 {
-    margin: 0.95rem 0;
+  h6 {
+    margin: 0.85rem 0;
     font-weight: 400;
     text-transform: uppercase;
   }

@@ -2,49 +2,13 @@
   <section id="main-menu">
     <div class="container">
       <ul>
-        <li>
+        <li v-for="(item, index) in menuItems" :key="index">
           <a href="">
             <img
-              src="../../assets/img/buy-comics-digital-comics.png"
-              alt="digital comics icon"
+              :src="require(`../../assets/img/${item.src}`)"
+              :alt="item.alt"
             />
-            Digital comics
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img
-              src="../../assets/img/buy-comics-merchandise.png"
-              alt="dc merchandise icon"
-            />
-            Dc merchandise
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img
-              src="../../assets/img/buy-comics-subscriptions.png"
-              alt="subscription icon"
-            />
-            Subscription
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img
-              src="../../assets/img/buy-comics-shop-locator.png"
-              alt="Comic shop locator icon"
-            />
-            Comic shop locator
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img
-              src="../../assets/img/buy-dc-power-visa.svg"
-              alt="Dc power visa icon"
-            />
-            Dc power visa
+            <h4>{{ item.text }}</h4>
           </a>
         </li>
       </ul>
@@ -55,6 +19,37 @@
 <script>
 export default {
   name: "MainMenu",
+  data() {
+    return {
+      menuItems: [
+        {
+          src: "buy-comics-digital-comics.png",
+          alt: "digital comics image",
+          text: "Digital Comics",
+        },
+        {
+          src: "buy-comics-merchandise.png",
+          alt: "comics merchandise image",
+          text: "Dc merchandise",
+        },
+        {
+          src: "buy-comics-subscriptions.png",
+          alt: "comics subscriptions image",
+          text: "Subscription",
+        },
+        {
+          src: "buy-comics-shop-locator.png",
+          alt: "comics shop locator image",
+          text: "Comic shop locator",
+        },
+        {
+          src: "buy-dc-power-visa.svg",
+          alt: "dc power visa image",
+          text: "Dc power visa",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -66,20 +61,22 @@ export default {
   background-color: $brandColor;
 }
 ul {
-  display: flex;
-  justify-content: space-around;
+  @include flex(center, center, row, 4rem);
   li {
     padding: 0.7rem;
     text-transform: uppercase;
     font-size: 1rem;
     display: inline-block;
     a {
+      @include flex(center, center, row, 0);
       color: white;
       img {
-        height: 50px;
-        max-width: 50px;
+        height: 60px;
+        max-width: 60px;
         margin-right: 0.8rem;
-        vertical-align: middle;
+      }
+      h4 {
+        font-weight: 400;
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="home-header">
+  <header class="home-header">
     <div class="container">
       <div class="header-logo">
         <img src="../assets/img/dc-logo.png" alt="dc comics logo" />
@@ -17,7 +17,7 @@
         </ul>
       </nav>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -96,7 +96,7 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/partials/_variables.scss";
 div.container {
-  @include flex(center, space-between, row);
+  @include flex(center, space-between, row, 0);
   img {
     padding-top: 0.5rem;
     width: 80px;

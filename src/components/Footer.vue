@@ -1,6 +1,6 @@
 <template>
-  <div class="home-footer">
-    <div class="footer-nav">
+  <footer class="home-footer">
+    <section class="footer-nav">
       <div class="container">
         <nav>
           <div class="footer-list-col">
@@ -35,21 +35,22 @@
           </div>
         </nav>
       </div>
-    </div>
-    <div class="footer-social">
+    </section>
+    <section class="footer-social">
       <div class="container">
         <button>Sign up now!</button>
         <div class="socials">
           <h4>Follow us</h4>
-          <img src="../assets/img/footer-facebook.png" alt="facebook logo" />
-          <img src="../assets/img/footer-twitter.png" alt="twitter logo" />
-          <img src="../assets/img/footer-youtube.png" alt="youtube logo" />
-          <img src="../assets/img/footer-pinterest.png" alt="pinterest logo" />
-          <img src="../assets/img/footer-periscope.png" alt="periscope logo" />
+          <img
+            v-for="(item, index) in footerSocials"
+            :key="index"
+            :src="require(`../assets/img/${item.src}`)"
+            :alt="item.alt"
+          />
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </footer>
 </template>
 
 <script>
@@ -190,6 +191,28 @@ export default {
           url: "#",
         },
       ],
+      footerSocials: [
+        {
+          src: "footer-facebook.png",
+          alt: "facebook logo",
+        },
+        {
+          src: "footer-twitter.png",
+          alt: "twitter logo",
+        },
+        {
+          src: "footer-youtube.png",
+          alt: "youtube logo",
+        },
+        {
+          src: "footer-pinterest.png",
+          alt: "pinterest logo",
+        },
+        {
+          src: "footer-periscope.png",
+          alt: "periscope logo",
+        },
+      ],
     };
   },
 };
@@ -197,12 +220,11 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/scss/partials/_variables.scss";
-div.home-footer {
-  div.footer-nav {
+footer.home-footer {
+  section.footer-nav {
     background-image: url(../assets/img/footer-bg.jpg);
     nav {
-      display: flex;
-      gap: 2rem;
+      @include flex(flex-start, flex-start, row, 2rem);
       background: url("../assets/img/dc-logo-bg.png") no-repeat right;
       div.footer-list-col {
         padding-bottom: 3.5rem;
@@ -217,11 +239,11 @@ div.home-footer {
       }
     }
   }
-  div.footer-social {
+  section.footer-social {
     padding: 1rem 0;
     background-color: #303030;
     div.container {
-      @include flex(center, space-between, row);
+      @include flex(center, space-between, row, 0);
       button {
         background-color: transparent;
         color: white;
@@ -232,8 +254,7 @@ div.home-footer {
         border: 2px solid $brandColor;
       }
       div.socials {
-        @include flex(center, space-between, row);
-        gap: 1.5rem;
+        @include flex(center, space-between, row, 1.5rem);
         h4 {
           color: $brandColor;
           text-transform: uppercase;

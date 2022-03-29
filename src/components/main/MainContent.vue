@@ -117,8 +117,8 @@ export default {
   padding: 1.5rem 0;
   background-color: $secondaryColor;
   .container {
-    @include flex(flex-start, center, row);
-    padding-top: 1rem;
+    @include flex(flex-start, center, row, 1.5rem);
+    padding-top: 2.5rem;
     flex-wrap: wrap;
     button {
       padding: 0.5rem 3rem;
