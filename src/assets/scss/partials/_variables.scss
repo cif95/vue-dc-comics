@@ -1,5 +1,5 @@
-$brandColor : #107eec;
-$secondaryColor : #1C1C1C;
+$brandColor: #107eec;
+$secondaryColor: #1C1C1C;
 
 @mixin flex($align, $justify, $direction, $gap) {
 	display: flex;

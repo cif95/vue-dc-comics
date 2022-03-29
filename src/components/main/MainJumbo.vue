@@ -13,13 +13,12 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/scss/partials/_variables.scss";
 section#main-jumbo {
-  height: 30vh;
-  padding: 5rem;
+  height: 43vh;
   position: relative;
   background-image: url("../../assets/img/jumbotron.jpg");
   button {
     top: 95%;
-    left: 15%;
+    left: 15.5%;
     position: absolute;
     font-size: 1.5rem;
   }

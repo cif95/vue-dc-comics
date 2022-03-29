@@ -1,5 +1,5 @@
 <template>
-  <section class="main-content">
+  <section id="main-content">
     <div id="cards-wrapper" class="container">
       <MainContentCard
         v-for="(card, index) in cards"
@@ -113,11 +113,12 @@ export default {
 
 <style scoped lang="scss">
 @import "../../assets/scss/partials/_variables.scss";
-.main-content {
+section#main-content {
   padding: 1.5rem 0;
+  font-family: "Asap Condensed", sans-serif;
   background-color: $secondaryColor;
   .container {
-    @include flex(flex-start, center, row, 1.5rem);
+    @include flex(flex-start, center, row, 1.7rem);
     padding-top: 2.5rem;
     flex-wrap: wrap;
     button {

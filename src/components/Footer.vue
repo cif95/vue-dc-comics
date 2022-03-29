@@ -4,13 +4,13 @@
       <div class="container">
         <nav>
           <div class="footer-list-col">
-            <h4>Dc Comics</h4>
+            <h3 class="text-uppercase">Dc Comics</h3>
             <ul>
               <li v-for="(link, index) in footerDcComicsNavLinks" :key="index">
                 <a :href="link.url">{{ link.text }}</a>
               </li>
             </ul>
-            <h4>Shop</h4>
+            <h3 class="text-uppercase">Shop</h3>
             <ul>
               <li v-for="(link, index) in footerShopNavLinks" :key="index">
                 <a :href="link.url">{{ link.text }}</a>
@@ -18,7 +18,7 @@
             </ul>
           </div>
           <div class="footer-list-col">
-            <h4>Dc</h4>
+            <h3 class="text-uppercase">Dc</h3>
             <ul>
               <li v-for="(link, index) in footerDcNavLinks" :key="index">
                 <a :href="link.url">{{ link.text }}</a>
@@ -26,7 +26,7 @@
             </ul>
           </div>
           <div class="footer-list-col">
-            <h4>Sites</h4>
+            <h3 class="text-uppercase">Sites</h3>
             <ul>
               <li v-for="(link, index) in footerSitesNavLinks" :key="index">
                 <a :href="link.url">{{ link.text }}</a>
@@ -38,9 +38,9 @@
     </section>
     <section class="footer-social">
       <div class="container">
-        <button>Sign up now!</button>
+        <button class="my-btn-outline-primary">Sign up now!</button>
         <div class="socials">
-          <h4>Follow us</h4>
+          <h2 class="text-uppercase">Follow us</h2>
           <img
             v-for="(item, index) in footerSocials"
             :key="index"
@@ -85,12 +85,12 @@ export default {
           url: "#",
         },
         {
-          text: "Collectibles",
+          text: "Videos",
           active: false,
           url: "#",
         },
         {
-          text: "Videos",
+          text: "News",
           active: false,
           url: "#",
         },
@@ -224,17 +224,20 @@ footer.home-footer {
   section.footer-nav {
     background-image: url(../assets/img/footer-bg.jpg);
     nav {
+      padding-top: 1rem;
       @include flex(flex-start, flex-start, row, 2rem);
       background: url("../assets/img/dc-logo-bg.png") no-repeat right;
       div.footer-list-col {
         padding-bottom: 3.5rem;
-        h4 {
+        h3 {
           margin-bottom: 0.5rem;
-          text-transform: uppercase;
         }
-        a {
-          font-size: 0.85rem;
-          color: rgb(156, 156, 156);
+        li {
+          padding: 0.12rem 0;
+          a {
+            font-size: 0.8rem;
+            color: rgb(156, 156, 156);
+          }
         }
       }
     }
@@ -242,22 +245,13 @@ footer.home-footer {
   section.footer-social {
     padding: 1rem 0;
     background-color: #303030;
+    font-family: "Asap Condensed", sans-serif;
     div.container {
       @include flex(center, space-between, row, 0);
-      button {
-        background-color: transparent;
-        color: white;
-        font-size: 1rem;
-        text-transform: uppercase;
-        height: 50px;
-        padding: 0 1rem;
-        border: 2px solid $brandColor;
-      }
       div.socials {
         @include flex(center, space-between, row, 1.5rem);
-        h4 {
+        h2 {
           color: $brandColor;
-          text-transform: uppercase;
         }
         img {
           width: 35px;

@@ -8,7 +8,7 @@
               :src="require(`../../assets/img/${item.src}`)"
               :alt="item.alt"
             />
-            <h4>{{ item.text }}</h4>
+            <h4 class="text-uppercase">{{ item.text }}</h4>
           </a>
         </li>
       </ul>
@@ -64,7 +64,6 @@ ul {
   @include flex(center, center, row, 4rem);
   li {
     padding: 0.7rem;
-    text-transform: uppercase;
     font-size: 1rem;
     display: inline-block;
     a {

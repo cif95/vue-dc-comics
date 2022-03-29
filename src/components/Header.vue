@@ -7,6 +7,7 @@
       <nav class="header-nav">
         <ul>
           <li
+            class="text-uppercase"
             :class="{ active: link.active }"
             v-for="(link, index) in headerNavLinks"
             :key="index"
@@ -96,9 +97,10 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/partials/_variables.scss";
 div.container {
+  font-family: "Asap Condensed", sans-serif;
   @include flex(center, space-between, row, 0);
   img {
-    padding-top: 0.5rem;
+    padding-left: 1rem;
     width: 80px;
   }
   li {
@@ -107,7 +109,6 @@ div.container {
     margin-right: 2rem;
     font-size: 0.85rem;
     display: inline-block;
-    text-transform: uppercase;
     border-bottom: 5px solid transparent;
     &.active {
       border-color: $brandColor;
